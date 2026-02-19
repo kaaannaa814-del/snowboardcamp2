@@ -3,186 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ITEMS</title>
+<title>Items</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --accent:#4a90e2;
-}
-
 body{
-  font-family:"Noto Sans JP", sans-serif;
   margin:0;
-  background:#f7f9fc;
-  color:#333;
-  padding:20px;
+  font-family:'Noto Sans JP',sans-serif;
+  background:#eaf6ff;
+  color:#2c4f73;
 }
 
-h1{
+/* タイトル */
+.page-title{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
   text-align:center;
-  font-family:"Playfair Display", serif;
-  margin-bottom:10px;
+  margin:30px 0 10px;
 }
 
-/* タブボタン */
-.tab-buttons{
+/* タブ */
+.tab-group{
   display:flex;
   justify-content:center;
-  gap:10px;
+  gap:20px;
   margin-bottom:20px;
 }
 
 .tab-btn{
-  padding:8px 16px;
+  padding:8px 18px;
+  border:2px solid #2c4f73;
   border-radius:20px;
-  border:2px solid var(--accent);
-  background:#fff;
-  color:var(--accent);
-  font-weight:600;
   cursor:pointer;
+  background:white;
 }
 
 .tab-btn.active{
-  background:var(--accent);
-  color:#fff;
+  background:#2c4f73;
+  color:white;
 }
 
-/* セクション */
-.section{
-  margin-bottom:20px;
-  background:#fff;
+/* リスト */
+.list{
+  max-width:500px;
+  margin:0 auto;
+  background:white;
   border-radius:12px;
-  padding:15px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  padding:20px;
 }
 
-.section h2{
-  margin-top:0;
-  font-size:16px;
-  border-left:5px solid var(--accent);
-  padding-left:8px;
+.list h3{
+  margin-top:20px;
+  font-size:18px;
 }
 
-/* チェックリスト */
-.items{
-  list-style:none;
-  padding:0;
-  margin:0;
+.list ul{
+  padding-left:1.2em;
+  line-height:1.8;
 }
 
-.item{
-  display:flex;
-  align-items:center;
-  padding:6px 0;
+/* 非表示 */
+.hidden{
+  display:none;
 }
-
-.item input{
-  margin-right:10px;
-}
-
-.label-text{
-  flex:1;
-}
-
 </style>
 </head>
 
 <body>
 
-<h1>ITEMS</h1>
+<div class="page-title">Items</div>
 
-<div class="tab-buttons">
-  <button class="tab-btn active" onclick="showTab(event,'bring')">持ち物</button>
-  <button class="tab-btn" onclick="showTab(event,'buy')">買ったもの</button>
+<div class="tab-group">
+  <div class="tab-btn active" onclick="showTab('bring')">持ち物</div>
+  <div class="tab-btn" onclick="showTab('buy')">買ったもの</div>
 </div>
 
-<!-- セクション -->
-<div class="section">
-  <h2>衣類</h2>
-  <ul id="list1" class="items"></ul>
+<div class="list" id="bring">
+  <ul>
+    <li>ウェア上下</li>
+    <li>ゴーグル</li>
+    <li>グローブ</li>
+    <li>ネックウォーマー</li>
+    <li>ニット帽</li>
+    <li>着替え</li>
+    <li>タオル</li>
+    <li>洗面用具</li>
+    <li>スマホ充電器</li>
+    <li>モバイルバッテリー</li>
+    <li>保険証</li>
+    <li>リップ・日焼け止め</li>
+  </ul>
 </div>
 
-<div class="section">
-  <h2>日用品</h2>
-  <ul id="list2" class="items"></ul>
-</div>
+<div class="list hidden" id="buy">
+  <h3>お酒</h3>
+  <ul>
+    <li>ビール</li>
+    <li>チューハイ</li>
+  </ul>
 
-<div class="section">
-  <h2>電子機器</h2>
-  <ul id="list3" class="items"></ul>
-</div>
+  <h3>ソフトドリンク</h3>
+  <ul>
+    <li>お茶</li>
+    <li>ジュース</li>
+    <li>水</li>
+  </ul>
 
-<div class="section">
-  <h2>その他</h2>
-  <ul id="list4" class="items"></ul>
+  <h3>お菓子</h3>
+  <ul>
+    <li>ポテチ</li>
+    <li>チョコ</li>
+    <li>グミ</li>
+  </ul>
 </div>
 
 <script>
+function showTab(type){
+  const bring = document.getElementById('bring');
+  const buy = document.getElementById('buy');
+  const buttons = document.querySelectorAll('.tab-btn');
 
-/* データ */
-const itemsData = {
-  bring:{
-    list1:["着替え","パジャマ","下着","靴下","防寒着"],
-    list2:["歯ブラシ","タオル","シャンプー","リンス"],
-    list3:["スマホ","充電器","モバイルバッテリー","イヤホン"],
-    list4:["財布","学生証","保険証","交通費"]
-  },
-  buy:{
-    list1:["お菓子","飲み物","カップ麺"],
-    list2:["日焼け止め","リップクリーム"],
-    list3:[],
-    list4:["昼ごはん代","お土産代"]
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  if(type === 'bring'){
+    bring.classList.remove('hidden');
+    buy.classList.add('hidden');
+    buttons[0].classList.add('active');
+  }else{
+    buy.classList.remove('hidden');
+    bring.classList.add('hidden');
+    buttons[1].classList.add('active');
   }
-};
-
-let currentTab = "bring";
-
-/* 表示処理 */
-function showTab(e,tab){
-  currentTab = tab;
-
-  document.querySelectorAll(".tab-btn").forEach(btn=>btn.classList.remove("active"));
-  e.target.classList.add("active");
-
-  Object.keys(itemsData[tab]).forEach((listId)=>{
-    const ul = document.getElementById(listId);
-    ul.innerHTML="";
-
-    itemsData[tab][listId].forEach((text,index)=>{
-      const li=document.createElement("li");
-      li.className="item";
-
-      const cb=document.createElement("input");
-      cb.type="checkbox";
-      cb.id= tab + "-" + listId + "-" + index;
-
-      const label=document.createElement("label");
-      label.textContent=text;
-      label.className="label-text";
-      label.htmlFor=cb.id;
-
-      if(localStorage.getItem(cb.id)==="true"){
-        cb.checked=true;
-      }
-
-      cb.addEventListener("change",()=>{
-        localStorage.setItem(cb.id,cb.checked);
-      });
-
-      li.appendChild(cb);
-      li.appendChild(label);
-      ul.appendChild(li);
-    });
-  });
 }
-
-/* 初期表示 */
-document.addEventListener("DOMContentLoaded",()=>{
-  showTab(event,"bring");
-});
-
 </script>
 
 </body>
