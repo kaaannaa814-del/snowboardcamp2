@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule</title>
 
+<!-- フォント -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --accent: #4a90e2;
+  --accent-strong: #2a6fb0;
+  --bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --text: #143240;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.day-block {
+  max-width: 820px;
+  margin: 0 auto 36px;
+  padding: 18px;
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.day-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 6px 0 18px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-strong));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  padding: 12px 0;
+  margin-left: 12px;
+}
+
+.time-text {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.time-strong {
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin-right: 8px;
+}
+
+@media (max-width:600px){
+  h1{font-size:32px;}
+  .day-title{font-size:22px;}
+  .time-text{font-size:15px;}
+  .timeline{padding-left:20px;}
+  .timeline-item{margin-left:8px;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Schedule</h1>
+
+<div class="day-block">
+  <div class="day-title">1月15日（木）</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">22:10</span>新宿駅西口 都庁大型バス専用駐車場集合</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">22:40</span>出発</div>
+    </div>
+  </div>
+</div>
+
+<div class="day-block">
+  <div class="day-title">1月16日（金）</div>
+  <div class="timeline">
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">05:10</span>スキー場着</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">07:30</span>ホテル移動（レンタル）</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">08:30</span>スキー場着</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">08:45</span>フリータイム</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">15:30</span>集合</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">16:00</span>ホテル着（竜王マウンテンホテル）</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">18:00</span>夕食</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">20:00</span>宴会</div></div>
+  </div>
+</div>
+
+<div class="day-block">
+  <div class="day-title">1月17日（土）</div>
+  <div class="timeline">
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">07:30</span>朝食</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">09:30</span>ホテル出発</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">09:50</span>スキー場着</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">10:00</span>フリータイム</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">15:45</span>竜王インフォメーション裏集合</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">16:15</span>ホテル着（返却）</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">16:45</span>ホテル出発</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">17:20</span>竜王バスターミナル着</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">17:30</span>出発</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">21:30</span>新宿駅西口 都庁大型バス専用駐車場着</div></div>
+  </div>
+</div>
+
+</body>
+</html>
