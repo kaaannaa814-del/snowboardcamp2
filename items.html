@@ -56,11 +56,26 @@ body{
 .list h3{
   margin-top:20px;
   font-size:18px;
+  border-bottom:1px solid #e0ecf5;
+  padding-bottom:4px;
 }
 
 .list ul{
-  padding-left:1.2em;
-  line-height:1.8;
+  padding-left:0;
+  list-style:none;
+  line-height:2;
+}
+
+.list li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* チェックボックス */
+.list input[type="checkbox"]{
+  width:18px;
+  height:18px;
 }
 
 /* 非表示 */
@@ -79,23 +94,38 @@ body{
   <div class="tab-btn" onclick="showTab('buy')">買ったもの</div>
 </div>
 
+<!-- 持ち物（カテゴリ分け） -->
 <div class="list" id="bring">
+
+  <h3>衣類</h3>
   <ul>
-    <li>ウェア上下</li>
-    <li>ゴーグル</li>
-    <li>グローブ</li>
-    <li>ネックウォーマー</li>
-    <li>ニット帽</li>
-    <li>着替え</li>
-    <li>タオル</li>
-    <li>洗面用具</li>
-    <li>スマホ充電器</li>
-    <li>モバイルバッテリー</li>
-    <li>保険証</li>
-    <li>リップ・日焼け止め</li>
+    <li><input type="checkbox">ウェア上下</li>
+    <li><input type="checkbox">ニット帽</li>
+    <li><input type="checkbox">ネックウォーマー</li>
+    <li><input type="checkbox">着替え</li>
   </ul>
+
+  <h3>日用品</h3>
+  <ul>
+    <li><input type="checkbox">タオル</li>
+    <li><input type="checkbox">洗面用具</li>
+    <li><input type="checkbox">リップ・日焼け止め</li>
+  </ul>
+
+  <h3>電子機器</h3>
+  <ul>
+    <li><input type="checkbox">スマホ充電器</li>
+    <li><input type="checkbox">モバイルバッテリー</li>
+  </ul>
+
+  <h3>貴重品</h3>
+  <ul>
+    <li><input type="checkbox">保険証</li>
+  </ul>
+
 </div>
 
+<!-- 買うもの -->
 <div class="list hidden" id="buy">
   <h3>お酒</h3>
   <ul>
