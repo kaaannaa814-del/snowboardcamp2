@@ -1,3 +1,7 @@
+了解しました！ボタンを元の**「大きめサイズ」に戻し、位置も「元の少しゆったりした場所」**に配置し直しますね。やっぱり、最初の方がデザインのバランスが良かったですよね。
+
+以下のテキストをすべてコピーして、GitHubの index.html に上書きしてください。
+
 <!DOCTYPE html>
 
 <html lang="ja">
@@ -5,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Snowboard Camp 2026</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
 <style>
 html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
 body {
@@ -25,14 +29,14 @@ body::before {
 content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
 background: rgba(255, 255, 255, 0.1); z-index: 1;
 }
-/* タイトル：少しコンパクトに */
+/* タイトル：元のゆったりサイズ */
 .header-svg-container {
 background-color: #4a647d;
-width: 90%; margin-top: 20px; padding: 8px 0; z-index: 10;
+width: 90%; margin-top: 30px; padding: 10px 0; z-index: 10;
 box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 display: flex; justify-content: center; align-items: center;
 }
-.main-title-svg { width: 100%; height: auto; max-height: 100px; }
+.main-title-svg { width: 100%; height: auto; max-height: 120px; }
 .winter-text {
 font-family: 'Playfair Display', serif;
 font-size: 100px; fill: none; stroke: white; stroke-width: 2;
@@ -41,6 +45,35 @@ animation: drawText 3s ease-in-out forwards;
 }
 @keyframes drawText { to { stroke-dashoffset: 0; } }
 
+/* メニュー：元のサイズと位置に戻しました */
+.link-group {
+  margin-top: 50px; 
+  width: 100%; display: flex;
+  flex-direction: column; align-items: flex-start;
+  padding-left: 12%; z-index: 100;
+}
+.winter-link-item { display: flex; align-items: center; margin-bottom: 22px; }
+.link-dot {
+  width: 8px; height: 8px; background-color: #2c4f73;
+  border-radius: 50%; margin-right: 12px;
+}
+.winter-link {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; 
+  color: #2c4f73; text-decoration: none;
+  padding: 6px 25px; border: 2.5px solid #2c4f73;
+  border-radius: 18px; background-color: rgba(255, 255, 255, 0.6);
+  min-width: 150px; text-align: center; font-weight: bold;
+}
+
+.popup-box {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background-color: rgba(255,255,255,0.98); border: 2px solid #2c4f73;
+  border-radius: 12px; padding: 20px; width: 80%; max-width: 260px;
+  display: none; z-index: 1000;
+}
+.popup-box.is-show { display: block; }
+.close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; }
 </style>
 </head>
 <body>
