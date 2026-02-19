@@ -15,7 +15,6 @@
 
     body {
       font-family: 'M PLUS Rounded 1c', sans-serif;
-      /* アップロードした画像ファイル名に修正 */
       background-image: url('S__463020034.jpg'); 
       background-size: cover;
       background-position: center;
@@ -28,16 +27,16 @@
       overflow: hidden;
     }
 
-    /* 背景が明るいので、全体に薄くフィルターをかけて文字を見やすくする */
+    /* 背景をくっきりさせるためフィルターを極薄に */
     body::before {
       content: '';
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(255, 255, 255, 0.2); /* 写真を邪魔しない程度の白フィルター */
+      background: rgba(255, 255, 255, 0.1); 
       z-index: 1;
     }
 
-    /* タイトル：写真に合わせて濃いめの青に変更 */
+    /* タイトル */
     .main-title-svg {
       position: absolute;
       top: 0%;
@@ -46,7 +45,7 @@
 
     .winter-text {
       font-family: 'Playfair Display', serif;
-      font-size: 110px; /* Snowboardの長さに合わせて少し調整 */
+      font-size: 110px; 
       fill: none;
       stroke: #2c4f73;
       stroke-width: 2;
@@ -59,10 +58,10 @@
       to { stroke-dashoffset: 0; }
     }
 
-    /* メニュー：リンク部分 */
+    /* メニュー：少し上の位置 */
     .link-group {
       position: absolute;
-      top: 35%;
+      top: 28%;
       left: 2.5em;
       z-index: 100;
       display: flex;
@@ -79,8 +78,7 @@
       position: relative;
       opacity: 0;
       animation: fadeSlideUp 1.5s ease-out forwards 0.5s;
-      /* 文字をはっきりさせる影 */
-      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+      text-shadow: 1px 1px 3px rgba(255,255,255,1);
     }
 
     .winter-link::before {
@@ -127,15 +125,6 @@
       top: 10px; right: 15px;
       font-size: 24px; color: #2c4f73; cursor: pointer;
     }
-
-    /* フッター */
-    .footer-text {
-      position: absolute;
-      bottom: 12px; left: 20px;
-      font-family: 'Playfair Display', serif;
-      font-size: 14px; color: #2c4f73; opacity: 0.8;
-      z-index: 10;
-    }
   </style>
 </head>
 <body>
@@ -170,7 +159,6 @@ function togglePopup() {
   p.classList.toggle('is-show');
 }
 
-// 3秒後に文字を塗りつぶす（背景の写真に馴染む色）
 setTimeout(() => {
   document.querySelectorAll('.winter-text').forEach(t => {
     t.setAttribute('fill', '#2c4f73');
@@ -179,8 +167,6 @@ setTimeout(() => {
   });
 }, 3000);
 </script>
-
-<div class="footer-text">Snowboard Camp 2026</div>
 
 </body>
 </html>
