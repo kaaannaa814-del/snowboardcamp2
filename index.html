@@ -25,7 +25,7 @@ content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
 background: rgba(255, 255, 255, 0.1); z-index: 1;
 }
 
-/* タイトル枠：少し大きく、文字をゆったり配置 */
+/* タイトル枠 */
 .header-svg-container {
   background-color: #4a647d; 
   width: 85%;
@@ -45,7 +45,7 @@ background: rgba(255, 255, 255, 0.1); z-index: 1;
 }
 @keyframes drawText { to { stroke-dashoffset: 0; } }
 
-/* メニュー：ボタンを上に詰めつつバランス調整 */
+/* メニュー */
 .link-group {
   margin-top: 20px; 
   width: 100%; display: flex;
@@ -76,8 +76,8 @@ background: rgba(255, 255, 255, 0.1); z-index: 1;
 .popup-box.is-show { display: block; }
 .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; }
 
-/* マップリンクのスタイル */
-.map-link {
+/* マップ・リンクのスタイル */
+.info-link {
   color: #2c4f73;
   text-decoration: underline;
   cursor: pointer;
@@ -114,8 +114,8 @@ background: rgba(255, 255, 255, 0.1); z-index: 1;
 <div style="color:#2c4f73; font-size:14px; line-height:1.6;">
   <p style="margin: 0 0 10px 0;"><strong>日程：3/12(木)-3/13(金)</strong></p>
   <ul style="padding-left:1.2em; margin: 0;">
-    <li>集合 6:30 <a href="https://www.google.com/maps/search/?api=1&query=都庁大型車駐車場" target="_blank" class="map-link">都庁大型バス駐車場内（議事堂通り高架下）</a></li>
-    <li>場所 <a href="https://www.google.com/maps/search/?api=1&query=舞子スノーリゾート" target="_blank" class="map-link">舞子スノーリゾート</a></li>
+    <li>集合 6:30 <a href="https://www.orion-ski.jp/fair/special/route/shinjyuku-nishiguchi.html" target="_blank" class="info-link">都庁大型バス駐車場内（議事堂通り高架下）</a></li>
+    <li>場所 <a href="https://www.google.com/maps/search/?api=1&query=舞子スノーリゾート" target="_blank" class="info-link">舞子スノーリゾート</a></li>
     <li>合宿費 20,000円予定</li>
   </ul>
 </div>
