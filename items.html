@@ -74,6 +74,7 @@ body {
 
 .list-section:first-child h3 { margin-top: 0; }
 .list-section ul { padding-left: 0; list-style: none; }
+
 .list-section li {
   display: flex;
   align-items: center;
@@ -81,6 +82,7 @@ body {
   border-bottom: 1px solid #f0f7ff;
 }
 
+/* 持ち物用のチェックボックス */
 .list-section input[type="checkbox"] {
   width: 20px;
   height: 20px;
@@ -89,13 +91,16 @@ body {
   accent-color: var(--accent);
 }
 
+/* 買ったもの（チェックなし）用のアイコン代わり */
+.buy-list li::before {
+  content: "・";
+  color: var(--accent);
+  font-weight: bold;
+  margin-right: 8px;
+}
+
 .note { color: var(--gray); font-size: 0.85em; display: block; }
 .price-tag { color: #d9534f; font-weight: bold; }
-
-/* 打ち消し線を削除し、チェック時のスタイルをなしにしました */
-input[type="checkbox"]:checked + span {
-  text-decoration: none; 
-}
 
 .hidden { display: none; }
 
@@ -166,20 +171,22 @@ input[type="checkbox"]:checked + span {
 </div>
 
 <div id="buy" class="list-container hidden">
-  <div class="list-section">
+  <div class="list-section buy-list">
     <h3>お酒</h3>
     <ul>
-   
+    
+    </ul>
   </div>
-  <div class="list-section">
+  <div class="list-section buy-list">
     <h3>ソフトドリンク</h3>
     <ul>
-   
+    
+    </ul>
   </div>
-  <div class="list-section">
-    <h3>お菓子</h3>
+  <div class="list-section buy-list">
+     <h3>お菓子</h3>
     <ul>
-     
+    
     </ul>
   </div>
 </div>
@@ -201,7 +208,8 @@ function showTab(type){
   }
 }
 
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+// 持ち物タブのチェック状態保存機能
+const checkboxes = document.querySelectorAll('#bring input[type="checkbox"]');
 window.addEventListener('load', () => {
   checkboxes.forEach(cb => {
     const savedStatus = localStorage.getItem(cb.id);
