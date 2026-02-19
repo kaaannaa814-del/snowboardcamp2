@@ -92,9 +92,9 @@ body {
 .note { color: var(--gray); font-size: 0.85em; display: block; }
 .price-tag { color: #d9534f; font-weight: bold; }
 
+/* 打ち消し線を削除し、チェック時のスタイルをなしにしました */
 input[type="checkbox"]:checked + span {
-  text-decoration: line-through;
-  color: var(--gray);
+  text-decoration: none; 
 }
 
 .hidden { display: none; }
@@ -158,8 +158,8 @@ input[type="checkbox"]:checked + span {
     <ul>
       <li><input type="checkbox" id="item20"><span>財布 / 保険証</span></li>
       <li><input type="checkbox" id="item21"><span>合宿費：<span class="price-tag">21,000円</span></span></li>
-      <li><input type="checkbox" id="item22"><span>ボードorスキーセット補償：<span class="price-tag">500円/1日</span></span></li>
-      <li><input type="checkbox" id="item23"><span>ウェア補償：<span class="price-tag">500円/1日</span></span></li>
+      <li><input type="checkbox" id="item22"><span>ボードorスキーセット補償：<span class="price-tag">500円/1日</span><span class="note">（借りる人のみ）</span></span></li>
+      <li><input type="checkbox" id="item23"><span>ウェア補償：<span class="price-tag">500円/1日</span><span class="note">（借りる人のみ）</span></span></li>
       <li><input type="checkbox" id="item24"><span>2日分の昼食代</span></li>
     </ul>
   </div>
@@ -167,22 +167,24 @@ input[type="checkbox"]:checked + span {
 
 <div id="buy" class="list-container hidden">
   <div class="list-section">
-    <h3>お酒・飲料</h3>
+    <h3>お酒</h3>
     <ul>
-      <li><input type="checkbox" id="buy1"><span>ビール・サワー類</span></li>
-      <li><input type="checkbox" id="buy2"><span>お茶・水</span></li>
-    </ul>
+   
   </div>
   <div class="list-section">
-    <h3>おつまみ・お菓子</h3>
+    <h3>ソフトドリンク</h3>
     <ul>
-      <li><input type="checkbox" id="buy3"><span>スナック菓子 / 夜食用カップ麺</span></li>
+   
+  </div>
+  <div class="list-section">
+    <h3>お菓子</h3>
+    <ul>
+     
     </ul>
   </div>
 </div>
 
 <script>
-// タブ切り替え
 function showTab(type){
   const bring = document.getElementById('bring');
   const buy = document.getElementById('buy');
@@ -199,12 +201,7 @@ function showTab(type){
   }
 }
 
-// --- ここから保存機能 ---
-
-// すべてのチェックボックスを取得
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-// ページ読み込み時に保存された状態を復元
 window.addEventListener('load', () => {
   checkboxes.forEach(cb => {
     const savedStatus = localStorage.getItem(cb.id);
@@ -214,7 +211,6 @@ window.addEventListener('load', () => {
   });
 });
 
-// チェックされた時に状態を保存
 checkboxes.forEach(cb => {
   cb.addEventListener('change', () => {
     localStorage.setItem(cb.id, cb.checked);
