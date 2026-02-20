@@ -90,4 +90,54 @@ body::before {
 
 <div class="header-svg-container">
   <svg viewBox="0 0 800 350" class="main-title-svg">
-    <text x="50%" y="45%"
+    <text x="50%" y="45%" text-anchor="middle" class="winter-text">Snowboard</text>
+    <text x="50%" y="88%" text-anchor="middle" class="winter-text">Camp</text>
+  </svg>
+</div>
+
+<div class="link-group">
+  <div class="winter-link-item">
+    <div class="link-dot"></div>
+    <a href="#" class="winter-link" onclick="togglePopup(); return false;">POINT</a>
+  </div>
+  <div class="winter-link-item">
+    <div class="link-dot"></div>
+    <a href="items.html" class="winter-link">ITEMS</a>
+  </div>
+  <div class="winter-link-item">
+    <div class="link-dot"></div>
+    <a href="schedule.html" class="winter-link">SCHEDULE</a>
+  </div>
+</div>
+
+<div id="popup" class="popup-box">
+  <span class="close-btn" onclick="togglePopup()">×</span>
+  <h3 style="margin-top:0; color:#2c4f73; border-bottom: 1px solid #2c4f73; padding-bottom: 5px;">Camp Info</h3>
+  <div style="color:#2c4f73; font-size:14px; line-height:1.7;">
+    <p style="margin: 10px 0;"><strong>日程：3/12(木)-3/13(金)</strong></p>
+    <ul style="padding-left:1.2em; margin: 0;">
+      <li>集合 6:30 <a href="https://www.orion-ski.jp/fair/special/route/shinjyuku-nishiguchi.html" target="_blank" class="info-link">都庁大型バス駐車場</a></li>
+      <li>場所 <a href="https://www.google.com/maps/search/?api=1&query=舞子スノーリゾート" target="_blank" class="info-link">舞子スノーリゾート</a></li>
+      <li>合宿費 21,000円予定</li>
+    </ul>
+    <p style="margin: 10px 0 0 0; font-size: 12px; color: #d9534f;">※レンタル補償料、昼食代は別途用意してください。</p>
+  </div>
+</div>
+
+<script>
+function togglePopup() {
+  const p = document.getElementById('popup');
+  p.classList.toggle('is-show');
+}
+
+setTimeout(() => {
+  document.querySelectorAll('.winter-text').forEach(t => {
+    t.setAttribute('fill', 'white');
+    t.setAttribute('stroke', 'none');
+    t.style.transition = "fill 1s ease-in-out";
+  });
+}, 3000);
+</script>
+
+</body>
+</html>
