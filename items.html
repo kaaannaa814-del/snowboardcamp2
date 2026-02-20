@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Items</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-
 <style>
 :root{
   --accent: #2c4f73;
@@ -18,37 +16,38 @@
 
 body {
   margin: 0;
-  padding: 20px;
+  padding: 15px;
   font-family: 'Noto Sans JP', sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 .page-title {
   font-family: 'Playfair Display', serif;
-  font-size: 38px;
+  font-size: 32px;
   text-align: center;
-  margin: 20px 0 30px;
+  margin: 10px 0 15px;
   font-weight: 700;
 }
 
 .tab-group {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 25px;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .tab-btn {
-  padding: 10px 24px;
+  padding: 6px 20px;
   border: 2px solid var(--accent);
-  border-radius: 25px;
+  border-radius: 20px;
   cursor: pointer;
   background: white;
   font-weight: 700;
   color: var(--accent);
-  transition: 0.3s;
+  transition: 0.2s;
+  font-size: 14px;
 }
 
 .tab-btn.active {
@@ -60,32 +59,33 @@ body {
   max-width: 550px;
   margin: 0 auto;
   background: var(--card-bg);
-  border-radius: 16px;
-  padding: 24px;
+  border-radius: 12px;
+  padding: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .list-section h3 {
-  margin: 28px 0 12px;
-  font-size: 18px;
+  margin: 12px 0 6px;
+  font-size: 16px;
   border-left: 4px solid var(--accent);
-  padding-left: 12px;
+  padding-left: 10px;
 }
 
 .list-section:first-child h3 { margin-top: 0; }
-.list-section ul { padding-left: 0; list-style: none; }
+.list-section ul { padding-left: 0; list-style: none; margin: 0; }
 
 .list-section li {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 4px 0;
   border-bottom: 1px solid #f0f7ff;
+  font-size: 14px;
 }
 
 .list-section input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-right: 12px;
+  width: 17px;
+  height: 17px;
+  margin-right: 10px;
   cursor: pointer;
   accent-color: var(--accent);
 }
@@ -94,17 +94,22 @@ body {
   content: "・";
   color: var(--accent);
   font-weight: bold;
-  margin-right: 8px;
+  margin-right: 6px;
 }
 
-.note { color: var(--gray); font-size: 0.85em; display: block; }
-.price-tag { color: #d9534f; font-weight: bold; }
+.note { color: var(--gray); font-size: 0.8em; display: inline-block; margin-left: 4px; }
+
+/* 赤字（price-tag）を廃止し、通常の文字色で太字に */
+.price-tag { 
+  color: var(--text); 
+  font-weight: bold; 
+}
 
 .hidden { display: none; }
 
 @media (max-width:600px){
-  .page-title { font-size: 32px; }
-  .tab-btn { padding: 8px 18px; font-size: 13px; }
+  .page-title { font-size: 28px; }
+  .tab-btn { padding: 6px 15px; font-size: 12px; }
 }
 </style>
 </head>
@@ -126,11 +131,11 @@ body {
       <li><input type="checkbox" id="br-item2"><span>ウェア<span class="note">（持ってる人）</span></span></li>
       <li><input type="checkbox" id="br-item3"><span>インナーウェア</span></li>
       <li><input type="checkbox" id="br-item4"><span>スノボ用靴下</span></li>
-      <li><input type="checkbox" id="br-item5"><span>着替え </span></li>
+      <li><input type="checkbox" id="br-item5"><span>着替え</span></li>
       <li><input type="checkbox" id="br-item6"><span>下着</span></li>
       <li><input type="checkbox" id="br-item7"><span>靴下</span></li>
       <li><input type="checkbox" id="br-item8"><span>パジャマ</span></li>
-      <li><input type="checkbox" id="br-item9"><span> 上着</span></li>
+      <li><input type="checkbox" id="br-item9"><span>上着</span></li>
       <li><input type="checkbox" id="br-item10"><span>バスタオル</span></li>
       <li><input type="checkbox" id="br-item11"><span>ヒッププロテクター<span class="note">（ある人）</span></span></li>
       <li><input type="checkbox" id="br-item12"><span>ネックウォーマー</span></li>
@@ -143,13 +148,13 @@ body {
       <li><input type="checkbox" id="br-item13"><span>歯ブラシ</span></li>
       <li><input type="checkbox" id="br-item14"><span>カイロ</span></li>
       <li><input type="checkbox" id="br-item15"><span>ハンカチ</span></li>
-      <li><input type="checkbox" id="br-item16"><span> ティッシュ</span></li>
+      <li><input type="checkbox" id="br-item16"><span>ティッシュ</span></li>
       <li><input type="checkbox" id="br-item17"><span>眼鏡・コンタクト</span></li>
       <li><input type="checkbox" id="br-item18"><span>日焼け止め</span></li>
       <li><input type="checkbox" id="br-item19"><span>ヘアアイロン</span></li>
-      <li><input type="checkbox" id="br-item20"><span>シャンプー・コンディショナー・ドライヤー<span class="note">（備え付け有）</span></span></li>
+      <li><input type="checkbox" id="br-item20"><span>シャンプー・コンディショナー<span class="note">（備付有）</span></span></li>
       <li><input type="checkbox" id="br-item21"><span>洗顔料・メイク落とし・化粧品</span></li>
-      <li><input type="checkbox" id="br-item22"><span>剃刀・髭剃り / くし・整髪料</span></li>
+      <li><input type="checkbox" id="br-item22"><span>剃刀・髭剃り / くし</span></li>
       <li><input type="checkbox" id="br-item23"><span>生理用品</span></li>
       <li><input type="checkbox" id="br-item24"><span>常備薬</span></li>
       <li><input type="checkbox" id="br-item25"><span>ビニール袋</span></li>
@@ -159,22 +164,13 @@ body {
   </div>
 
   <div class="list-section">
-    <h3>電子機器</h3>
-    <ul>
-      <li><input type="checkbox" id="br-item28"><span>スマホ</span></li>
-      <li><input type="checkbox" id="br-item29"><span> 充電器</span></li>
-      <li><input type="checkbox" id="br-item30"><span>モバイルバッテリー</span></li>
-    </ul>
-  </div>
-
-  <div class="list-section">
     <h3>貴重品</h3>
     <ul>
-      <li><input type="checkbox" id="br-item31"><span>財布</span></li>
+      <li><input type="checkbox" id="br-item31"><span>財布・スマホ・充電器</span></li>
       <li><input type="checkbox" id="br-item32"><span>保険証</span></li>
       <li><input type="checkbox" id="br-item33"><span>合宿費：<span class="price-tag">21,000円</span></span></li>
-      <li><input type="checkbox" id="br-item34"><span>ボードorスキーセット補償：<span class="price-tag">500円/1日</span><span class="note">（借りる人のみ）</span></span></li>
-      <li><input type="checkbox" id="br-item35"><span>ウェア補償：<span class="price-tag">500円/1日</span><span class="note">（借りる人のみ）</span></span></li>
+      <li><input type="checkbox" id="br-item34"><span>ボード補償：<span class="price-tag">500円/1日</span></span></li>
+      <li><input type="checkbox" id="br-item35"><span>ウェア補償：<span class="price-tag">500円/1日</span></span></li>
       <li><input type="checkbox" id="br-item36"><span>2日分の昼食代</span></li>
     </ul>
   </div>
@@ -182,19 +178,13 @@ body {
 
 <div id="buy" class="list-container hidden">
   <div class="list-section buy-list">
-    <h3>お酒</h3>
-    <ul>
-    </ul>
+    <h3>お酒</h3><ul></ul>
   </div>
   <div class="list-section buy-list">
-    <h3>ソフトドリンク</h3>
-    <ul>
-    </ul>
+    <h3>ソフトドリンク</h3><ul></ul>
   </div>
   <div class="list-section buy-list">
-     <h3>お菓子</h3>
-    <ul>
-    </ul>
+    <h3>お菓子</h3><ul></ul>
   </div>
 </div>
 
@@ -219,9 +209,7 @@ const checkboxes = document.querySelectorAll('#bring input[type="checkbox"]');
 window.addEventListener('load', () => {
   checkboxes.forEach(cb => {
     const savedStatus = localStorage.getItem(cb.id);
-    if (savedStatus === 'true') {
-      cb.checked = true;
-    }
+    if (savedStatus === 'true') cb.checked = true;
   });
 });
 
